@@ -1,0 +1,115 @@
+<script>
+
+    function ajax_post() {
+
+        // create a variable we need to send to our PHP file
+        var letter = document.getElementById("Searchh").value;
+        //create XMLHttpRequest object
+        var  xmlhttp = new XMLHttpRequest();
+        // access the onreadystatechange event for the XMLHttpRequest object
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                var to_show;
+                var results = JSON.parse(this.responseText)
+                if (results.length > 0)
+                {
+                    to_show = "<table border='1px'>";
+                    to_show += "<tr>";
+                    to_show += "<th>"; to_show += "User_ID"; to_show += "</th>";
+                    to_show += "<th>"; to_show += "Email"; to_show += "</th>";
+                    to_show += "<th>"; to_show += "Birthday"; to_show += "</th>";
+                    to_show += "</tr>";
+                    for (var i = 0; i < results.length; i++)
+                    {
+                        var json_result = results[i];
+                        to_show += "<tr>";
+                        to_show += "<td>"; to_show += json_result[0]; to_show += "</td>";
+                        to_show += "<td>"; to_show += json_result[1]; to_show += "</td>";
+                        to_show += "<td>"; to_show += json_result[2]; to_show += "</th>";
+                        to_show += "</tr>";
+                    }
+                    to_show += "</table>";
+                } else {
+                    to_show = "There is no user name starts with '"+letter+"'";
+                }
+
+                document.getElementById("display_records").innerHTML = to_show;
+
+            }//if
+
+        } //function()
+          //send the data to PHP now and wait for response
+          //to update the display_records in div
+          //actually execute the request
+        xmlhttp.open("POST", "display.php", true);
+        xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xmlhttp.send("q="+ letter);
+
+    }
+</script>
+
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Mtime</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="validate.js"> </script>
+    <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">-->
+</head>
+<body class="mainBody">
+<div class="container header">
+    <a href="main.html"><img src="logo.png" class="logo"></a>
+    <form class="searchbar" id="Searchbar" method="post">
+        <div id="search_msg" class="err_msg">
+            <input type="text" id="Searchh" placeholder="Search">
+            <input type="submit" name="" value="Go">
+            <div id="display_records"></div>
+        </div>
+    </form>
+    <a href="#" class="header-btn">Account</a>
+
+</div>
+<div class="movie-details">
+    <div class="row1">
+        <div class="left-box">
+            <h1>Avengers: Endgame</h1>
+            <p>After the devastating events of Avengers: Infinity War (2018), the </p>
+            <p>universe is in ruins. With the help of remaining allies, the Avengers</p>
+            <p> assemble once more in order to reverse Thanos' actions and restore</p>
+            <p> balance to the universe.</p>
+            <br>
+
+            <div class="casting">
+                <p>Cast: </p>
+                <img src="Cast/RDJ.png" title="Robert Downey, Jr.">
+                <img src="Cast/Chris Evans.png" title="Chris Evans">
+                <img src="Cast/Mark Ruffalo.png" title="Mark Ruffalo">
+                <img src="Cast/Scarlett Johansson.png" title="Scarlett Johansson">
+                <img src="Cast/Chris Hemsworth.png" title="Chris Hemsworth">
+                <img src="Cast/Jeremy Renner.png" title="Jeremy Renner">
+            </div>
+            <div class="WandD">
+                <a href="Movie details.html">Rate</a>
+                <a href="watchlist page.html" class="watchlist-btn">Add to watch list</a>
+            </div>
+        </div>
+        <a href="Movie details.html"><img src="Poster/Endgame.jpg" class="endgamePoster"></a>
+    </div>
+    <div class="row2">
+        <h3>Popular Movies</h3>
+        <a href="#"><img src="Poster/Joker.jpg" title="Joker"></a>
+        <a href="#"><img src="Poster/Hollywood.jpg" title="Once Upon a Time In Hollywood"></a>
+        <a href="#"><img src="Poster/Walter Mitty.jpg" title="The Secret Life of Walter Mitty"></a>
+        <a href="#"><img src="Poster/Free solo.jpg" title="Free Solo"></a>
+        <a href="#"><img src="Poster/3 idiots.jpg" title="3 Idiots"></a>
+        <a href="#"><img src="Poster/Spider.jpg" title="Spider-Man: Into the Spider-Verse"></a>
+        <a href="#"><img src="Poster/Shawshank.jpg" title="The Shawshank Redemption"></a>
+
+    </div>
+</div>
+<script type="text/javascript" src="Searchbar-r.js"></script>
+</body>
+</html>

@@ -1,0 +1,554 @@
+/*html{
+  background: url("background.jpg");
+	height:100%;
+	width:100%;
+	overflow: hidden;
+	background-size:cover;
+}*/
+
+body{
+  margin: 0;
+  padding: 0;
+  background: url(background.jpg);
+  background-size: cover;
+  background-position: center;
+  font-family: sans-serif;
+}
+
+.loginbox{
+  width:320px;
+  height: 420px;
+  background: #000;
+  color: #fff;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  padding: 70px 30px;
+  background-color:rgba(0,0,0,0.9);
+}
+
+.avatar{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: absolute;;
+  top: -50px;
+  left: calc(50% - 50px);
+}
+
+.loginbox h1{
+  margin: 0;
+  padding: 0 0 20px;
+  text-align: center;
+  font-size: 22px;
+}
+
+.loginbox p{
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+}
+
+.loginbox input{
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.loginbox input[type="text"], input[type="password"]
+{
+  border: none;
+  border-bottom: 1px solid #fff;
+  background: transparent;
+  outline: none;
+  height: 40px;
+  color: #fff;
+  font-size: 16px;
+  }
+
+  .loginbox input[type="submit"]
+  {
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #fb2525;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+  }
+
+.loginbox input[type="submit"]:hover
+{
+  cursor: pointer;
+  background: #ffc107;
+  color: #000;
+}
+
+.loginbox a{
+   text-decoration: none;
+   font-size: 12px;
+   line-height: 20px;
+   color: darkgrey;
+}
+
+.loginbox a:hover
+{
+   color: #ffc107;
+}
+
+.signupbox{
+  width:320px;
+  height: 650px;
+  background: #000;
+  color: #fff;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  padding: 70px 30px;
+  background-color:rgba(0,0,0,0.9);
+  margin-top: 50px;
+}
+
+.signupbox p{
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+}
+
+.signupbox input{
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.signupbox input[type="text"], input[type="password"]
+{
+  border: none;
+  border-bottom: 1px solid #fff;
+  background: transparent;
+  outline: none;
+  height: 40px;
+  color: #fff;
+  font-size: 16px;
+  }
+
+  .signupbox input[type="submit"]
+  {
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #fb2525;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+  }
+
+.signupbox input[type="submit"]:hover
+{
+  cursor: pointer;
+  background: #ffc107;
+  color: #000;
+}
+
+.signupbox input[type="reset"]
+{
+  border: none;
+  outline: none;
+  height: 40px;
+  background: #000;
+  color: #fff;
+  font-size: 8px;
+  border-radius: 20px;
+}
+
+.signupbox input[type="reset"]:hover
+{
+  cursor: pointer;
+  background: #000;
+  color: darkgrey;
+}
+
+.signupbox a{
+   text-decoration: none;
+   font-size: 12px;
+   line-height: 20px;
+   color: darkgrey;
+}
+
+.signupbox a:hover
+{
+   color: #ffc107;
+}
+
+.err_msg
+{
+  color:red;
+}
+
+/*-------main page------------*/
+
+
+
+.mainBody{
+  background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)), url(background.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.logo{
+  width: 70px;
+  margin-top: 0px;
+  margin-left: 20px;
+
+}
+.searchbar{
+  margin-left: 400px;
+  margin-top: -50px;
+}
+
+.searchbar input[type="text"]
+{
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  height: 25px;
+  width: 200px;
+  color: #000;
+  font-size: 16px;
+}
+
+.searchbar input[type="submit"]
+{
+  border: none;
+  outline: none;
+  height: 30px;
+  width: 50px;
+  background: #fb2525;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 20px;
+}
+
+.searchbar input[type="submit"]:hover
+{
+  border: none;
+  outline: none;
+  height: 30px;
+  width: 50px;
+  background: #ffc107;
+  color: #000;
+  font-size: 18px;
+  border-radius: 20px;
+}
+
+.header{
+  height: 10%;
+}
+
+.header-btn{
+  text-decoration: none;
+  border-radius: 30px;
+  padding: 7px 20px;
+  float: right;
+  margin-top: -50px;
+  margin-right: 20px;
+  color: #fff !important;
+  background: #fb2525;
+  font-weight: 600;
+}
+
+.header-btn:hover{
+  text-decoration: none;
+  border-radius: 30px;
+  padding: 7px 20px;
+  float: right;
+  margin-top: -50px;
+  margin-right: 20px;
+  color: #000 !important;
+  background: #ffc107;
+  font-weight: 600;
+}
+
+.movie-details{
+  margin: 3% 0;
+}
+
+.left-box{
+  color: #fff;
+  margin: 15px 0;
+  padding: 20px;
+  margin-left: 10px;
+}
+.casting{
+  margin-top: -10px;
+}
+
+.casting img{
+  height: 40px;
+  width: 40px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.left-box a{
+  text-decoration: none;
+  border-radius: 30px;
+  padding: 7px 20px;
+  margin-top: 15px;
+  color: #fff !important;
+  background: #fb2525;
+  font-weight: 600;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.watchlist-btn{
+  border: 1px solid #fff !important;
+  background: transparent !important;
+}
+
+.WandD{
+  margin-top:20px;
+}
+
+.endgamePoster{
+  height: 420px;
+  margin-left: 700px;
+  margin-top: -450px;
+  transition: 0.6s;
+}
+
+.endgamePoster:hover{
+  height: 450px;
+}
+
+.row2 h3{
+  color: #fff;
+  margin-left: 30px;
+  margin-top: 50px;
+}
+
+.row2 img{
+  width: 100px;
+  margin-left: 30px;
+  margin-top: 10px;
+  transition: 0.6s;
+}
+
+.row2 img:hover{
+  transform: translateY(-15px);
+}
+
+/*-------Movie details page------------*/
+.contentBox{
+  width:800px;
+  height: 650px;
+  background: #000;
+  color: #fff;
+  top: 50%;
+  left: 40%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  padding: 70px 30px;
+  background-color:rgba(0,0,0,0.5);
+  margin-top: 50px;
+
+}
+
+.starBox{
+  margin-left: 550px;
+  margin-top: -110px;
+}
+
+.star-full:hover{
+  background: #ffc107;
+}
+
+.button a{
+  text-decoration: none;
+  border-radius: 30px;
+  padding: 7px 20px;
+  margin-top: -70px;
+  color: #fff !important;
+  background: #fb2525;
+  font-weight: 600;
+  display: inline-block;
+  margin-left: 500px;
+}
+
+.movie-info{
+  margin-top: 70px;
+}
+
+
+
+.posterInDetails{
+  height: 300px;
+}
+
+.summary_text{
+  margin-left: 250px;
+  margin-top: -320px;
+}
+
+.summary_text a{
+  text-decoration: none;
+  color: darkgrey;
+}
+
+/*----------watchlist page------------------*/
+.watchlist{
+  margin-top: -50px;
+  margin-left: 300px;
+  text-decoration: none;
+  border-radius: 10px;
+  padding: 7px 20px;
+  color: #fff !important;
+  font-weight: 600;
+  display: inline-block;
+  border: 1px solid #fff !important;
+  background: transparent !important;
+}
+
+.watchlist1{
+  width:200px;
+  height: 150px;
+  background: #000;
+  color: #fff;
+  top: 20%;
+  left: 15%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  padding: 70px 30px;
+  background-color:rgba(0,0,0,0.5);
+  margin-top: 60px;
+  border-radius: 15px;
+}
+
+.watchlist1 a{
+  text-decoration: none;
+  color: #fff;
+}
+
+.watchlist1 h3{
+  margin-top: -35px;
+  margin-left: 20px;
+}
+
+.watchlist1 h3:hover{
+  margin-top: -35px;
+  margin-left: 20px;
+  color: #ffc107;
+}
+
+.movielist-btn input[type="submit"]
+{
+  text-decoration: none;
+  border-radius: 30px;
+  padding: 7px 20px;
+  color: #fff !important;
+  background: transparent;
+  font-weight: 600;
+  display: inline-block;
+  margin-left: 25px;
+  margin-top: 5px;
+}
+
+
+.watchlistCreatBar{
+  margin-left: 600px;
+  margin-top: -55px;
+}
+
+.watchlistCreatBar input[type="text"]
+{
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  height: 25px;
+  width: 100px;
+  color: #000;
+  font-size: 16px;
+}
+
+.watchlistCreatBar input[type="submit"]
+{
+  border: none;
+  outline: none;
+  height: 30px;
+  width: 50px;
+  background: #fb2525;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 20px;
+  margin-left: 110px;
+  margin-top: -27px;
+}
+
+.watchlistCreatBar input[type="submit"]:hover
+{
+  border: none;
+  outline: none;
+  height: 30px;
+  width: 50px;
+  background: #ffc107;
+  color: #000;
+  font-size: 18px;
+  border-radius: 20px;
+}watchlistCreatBar
+
+/*----------watchlist details page------------------*/
+.watchlist-title{
+  margin-top: -50px;
+  margin-left: 300px;
+  text-decoration: none;
+  border-radius: 10px;
+  padding: 7px 20px;
+  color: #fff !important;
+  font-weight: 600;
+  display: inline-block;
+  border: 1px solid #fff !important;
+  background: transparent !important;
+}
+
+.movie1{
+  width:750px;
+  height: 180px;
+  background: #000;
+  color: #fff;
+  top: 20%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  padding: 70px 30px;
+  background-color:rgba(0,0,0,0.5);
+  margin-top: 60px;
+}
+
+.posterInWatchlist{
+  width: 100px;
+  margin-top: -50px;
+}
+
+.movieName{
+  margin-top: -110px;
+  margin-left: 150px;
+}
+
+.movielist-removebtn input[type="submit"]
+{
+  text-decoration: none;
+  border-radius: 30px;
+  padding: 7px 20px;
+  margin-top: -50px;
+  color: #fff !important;
+  background: transparent;
+  font-weight: 600;
+  display: inline-block;
+  margin-left: 550px;
+}
